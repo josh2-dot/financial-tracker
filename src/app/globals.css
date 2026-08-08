@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #0a0a0a;
+  --surface: #141414;
+  --surface-2: #1c1c1c;
+  --border: #262626;
+  --text: #ededed;
+  --text-muted: #a1a1aa;
+  --accent: #ededed;
+  --danger: #f87171;
+  --success: #4ade80;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .card {
+    @apply rounded-2xl border p-4;
+    background: var(--surface);
+    border-color: var(--border);
+  }
+
+  .input {
+    @apply w-full rounded-lg border px-3 py-2 text-sm outline-none;
+    background: var(--surface-2);
+    border-color: var(--border);
+    color: var(--text);
+  }
+  .input:focus { border-color: #4b5563; }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-medium transition;
+  }
+  .btn-primary {
+    @apply btn;
+    background: var(--text);
+    color: var(--bg);
+  }
+  .btn-primary:hover { opacity: 0.9; }
+  .btn-ghost {
+    @apply btn;
+    background: transparent;
+    color: var(--text-muted);
+    border: 1px solid var(--border);
+  }
+  .btn-ghost:hover { color: var(--text); }
+  .btn-danger {
+    @apply btn;
+    background: transparent;
+    color: var(--danger);
+    border: 1px solid var(--border);
+  }
+
+  .label {
+    @apply block text-xs uppercase tracking-wider mb-1;
+    color: var(--text-muted);
+  }
+
+  .bucket-pill {
+    @apply inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-xs;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+  }
+}
